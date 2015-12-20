@@ -50,7 +50,7 @@ body {
 .brand {
     text-decoration: none;
     height: $header-height;
-
+    
     h1 {
         margin-bottom: 0;
     }
@@ -70,10 +70,9 @@ body {
         width: 100%;
     }
 
-    .brand {        
+    .brand {
         top: 0;
         background-color: white;
-
         img {
             margin: 10px;
         }
@@ -82,14 +81,11 @@ body {
     .social-links {
         bottom: 0;
         background-color: $nav-background;
-
         img {
             width: 40px;
             margin-top: 5px;
         }
-
     }
-
 }
 
 .content {
@@ -107,12 +103,14 @@ body {
 }
 
 .article {
+
     img {
         width: 100%;
         height: auto;
     }
 
     .section {
+
         p {
             text-align: justify;
         }
