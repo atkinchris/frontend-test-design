@@ -1,0 +1,35 @@
+#nav-button,
+.nav {
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    background: $nav-background;
+    border: 1px solid $nav-border;
+    margin-bottom: 10px !important;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#nav-button,
+#nav-toggle {
+    display: none;
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+    #nav-button {
+        display: flex;
+        margin-top: $header-height !important;
+    }
+    .nav {
+        max-height: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+        flex-direction: column;
+    }
+    #nav-toggle:checked+.nav {
+        max-height: 100%;
+        padding: 10px;
+    }
+}

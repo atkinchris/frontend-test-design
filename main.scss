@@ -2,17 +2,11 @@
 ---
 
 @import "reset";
-
-$font-stack: Helvetica, sans-serif;
-$nav-background: #DDD;
-$nav-border: #AAA;
-$max-width: 960px;
-$mobile-breakpoint: 380px;
-$tablet-breakpoint: 768px;
-$header-height: 50px;
+@import "variables";
+@import "typography";
+@import "menu";
 
 body {
-    font: 100% $font-stack;
     padding: 10px;
 }
 
@@ -23,16 +17,9 @@ body {
 
 .header,
 .brand,
-.nav,
 .content {
     display: flex;
     align-items: center;
-}
-
-.header,
-.nav,
-.content {
-    width: 100%;
 }
 
 .aside {
@@ -43,30 +30,9 @@ body {
     }
 }
 
-.nav {
-    border: 1px solid $nav-border;
-    justify-content: space-around;
-    background: $nav-background;
-    padding: 10px;
-    margin-bottom: 10px;
-    list-style: none;
-
-    @media screen and (max-width: $mobile-breakpoint) {
-        display: none;
-    }
-}
-
 .header {
     justify-content: space-between;
     margin-bottom: 10px;
-
-    @media screen and (max-width: $mobile-breakpoint) {
-        flex-direction: column;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
 }
 
 .social-links {
@@ -78,34 +44,51 @@ body {
         height: auto;
         margin: 0 10px;
     }
-
-    @media screen and (max-width: $mobile-breakpoint) {
-        width: 100%;
-        background-color: $nav-background;
-
-        img {
-            width: 40px;
-            margin-top: 5px;
-        }
-    }
 }
 
 .brand {
     text-decoration: none;
     height: $header-height;
-    width: 100%;
     background-color: white;
+
+    h1 {
+        margin-bottom: 0;
+    }
 
     img {
         width: 50px;
         height: auto;
         margin-right: 10px;
     }
+}
 
-    @media screen and (max-width: $mobile-breakpoint) {
-        display: flex;
-        justify-content: center;
+@media screen and (max-width: $mobile-breakpoint) {
+    .brand,
+    .social-links {
+        position: fixed;
+        left: 0;
+        width: 100%;
     }
+
+    .brand {        
+        top: 0;
+
+        img {
+            margin: 10px;
+        }
+    }
+
+    .social-links {
+        bottom: 0;
+        background-color: $nav-background;
+
+        img {
+            width: 40px;
+            margin-top: 5px;
+        }
+
+    }
+
 }
 
 .content {
@@ -118,7 +101,6 @@ body {
     }
 
     @media screen and (max-width: $mobile-breakpoint) {
-        margin-top: $header-height;
         margin-bottom: $header-height;
     }
 }
