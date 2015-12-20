@@ -1,0 +1,63 @@
+.header,
+.brand,
+.social-links {
+    @include flexbox;
+    @include align-items(center);
+}
+
+.header {
+    @include justify-content(space-between);
+    margin-bottom: 10px !important;
+}
+
+.social-links {
+    @include justify-content(space-around);
+
+    img {
+        width: 50px;
+        height: auto;
+        margin: 0 0.5em;
+    }
+}
+
+.brand {
+    text-decoration: none;
+    height: $header-height;
+    
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 0;
+    }
+
+    img {
+        width: 50px;
+        height: auto;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+    .brand,
+    .social-links {
+        position: fixed;
+        left: 0;
+        width: 100%;
+    }
+
+    .brand {
+        top: 0;
+        background-color: white;
+        img {
+            margin: 10px;
+        }
+    }
+
+    .social-links {
+        bottom: 0;
+        background-color: $nav-background;
+        img {
+            width: 40px;
+            margin-top: 5px;
+        }
+    }
+}
