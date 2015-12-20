@@ -3,6 +3,7 @@
 
 @import "reset";
 @import "variables";
+@import "flex";
 @import "typography";
 @import "menu";
 
@@ -17,9 +18,10 @@ body {
 
 .header,
 .brand,
-.content {
-    display: flex;
-    align-items: center;
+.content,
+.social-links {
+    @include flexbox;
+    @include align-items(center);
 }
 
 .aside {
@@ -31,13 +33,12 @@ body {
 }
 
 .header {
-    justify-content: space-between;
+    @include justify-content(space-between);
     margin-bottom: 10px;
 }
 
 .social-links {
-    display: flex;
-    justify-content: space-around;
+    @include justify-content(space-around);
 
     img {
         width: 50px;
@@ -49,7 +50,6 @@ body {
 .brand {
     text-decoration: none;
     height: $header-height;
-    background-color: white;
 
     h1 {
         margin-bottom: 0;
@@ -72,6 +72,7 @@ body {
 
     .brand {        
         top: 0;
+        background-color: white;
 
         img {
             margin: 10px;
@@ -92,7 +93,7 @@ body {
 }
 
 .content {
-    align-items: flex-start;
+    @include align-items(flex-start);
 
     .article {
         @media screen and (min-width: $tablet-breakpoint) {
@@ -106,7 +107,6 @@ body {
 }
 
 .article {
-
     img {
         width: 100%;
         height: auto;
@@ -124,11 +124,11 @@ body {
         }
 
         @media screen and (max-width: $mobile-breakpoint) {
-            display: flex;
-            flex-direction: column;
+            @include flexbox;
+            @include flex-direction(column);
 
             p {
-                order: -1;
+                @include order(-1);
             }
 
             .related {
